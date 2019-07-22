@@ -1,0 +1,645 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            position: relative;
+        }
+        #top{
+            width: 1900px;
+            height: 100px;
+            background-color: slateblue;
+            color: white;
+
+
+        }
+        #left{
+            border: 0.5px solid slateblue;
+            margin-top: 5px;
+            width: 300px;
+            height: 800px;
+            background-color: slateblue;
+            float: left;
+            overflow: hidden;
+
+
+        }
+        #right{
+            border: 0.5px solid slateblue;
+            margin-left: 310px;
+            margin-top: 5px;
+            width: 1580px;
+            height: 800px;
+            background-color: #7290d2;
+            font-size:20px;
+        }
+        #stuInfo{
+            height: 50px;
+            color: white;
+            display: flex;
+            background-color: darkslateblue;
+            font-size: 30px;
+            justify-content: center;
+            align-content: center;
+        }
+        #stuInfo:hover{
+            background-color: cornflowerblue;
+        }
+        #stuClass{
+            height: 50px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: darkslateblue;
+            font-size: 30px;
+        }
+        #stuClass:hover{
+            background-color: cornflowerblue;
+        }
+
+        #topBox{
+            width: auto;
+            background-color: slateblue;
+        }
+        #footBox{
+            width: auto;
+            background-color: slateblue;
+        }
+        #wait01{
+            height: 50px;
+            background-color: slateblue;
+            color: white;
+            display: none;
+            text-align: center;
+            font-size: 20px;
+            line-height: 50px;
+        }
+        #wait01:hover{
+            background-color: cornflowerblue;
+        }
+        #wait02:hover{
+            background-color: cornflowerblue;
+        }
+        #wait03:hover{
+            background-color: cornflowerblue;
+        }
+        #wait04:hover{
+            background-color: cornflowerblue;
+        }
+        #wait05:hover{
+            background-color: cornflowerblue;
+        }
+        #wait02{
+            height: 50px;
+            background-color: slateblue;
+            color: white;
+            display: none;
+            text-align: center;
+            font-size: 20px;
+            line-height: 50px;
+        }
+        #wait03{
+            height: 50px;
+            background-color: slateblue;
+            color: white;
+            display: none;
+            text-align: center;
+            font-size: 20px;
+            line-height: 50px;
+        }
+        #wait04{
+            height: 50px;
+            background-color: slateblue;
+            color: white;
+            display: none;
+            text-align: center;
+            font-size: 20px;
+            line-height: 50px;
+        }
+        #wait05{
+            height: 50px;
+            background-color: slateblue;
+            color: white;
+            display: none;
+            text-align: center;
+            font-size: 20px;
+            line-height: 50px;
+        }
+        #stuInfoIndex{
+            width: auto;
+            height: auto;
+            display: none;
+        }
+        #stuClassTable{
+            width: auto;
+            height: auto;
+            display: none;
+        }
+        .txt{
+
+        }
+        .txt2{
+            width: 500px;
+            height: 100px;
+            font-size: 50px;
+            color: white;
+            padding-top: 10px;
+            margin-left: 20px;
+
+
+        }
+
+        #studentInfo{
+            display: none;
+            float: left;
+        }
+        #courseEntry{
+            display: none;
+        }
+        #gradeInfo{
+            display: none;
+        }
+        #basicInformationOfStudents{
+
+
+            width: 400px;
+        }
+
+        #studentCourse{
+            display:none;
+
+        }
+        #gradefind{
+            display:none
+        }
+        #wellocom{
+            margin-left: 1000px;
+            position: absolute;
+            margin-top: -100px;
+        }
+        #username{
+            margin-left: 1050px;
+            margin-top: -100px;
+            position: absolute;
+        }
+        table{
+            color: white;
+        }
+        td{
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div id="top">
+    <div class="txt2">学生管理系统学生页面</div>
+    <br>
+    <br>
+    <span id="wellocom">欢迎:</span><div id="username"></div>
+</div>
+<div id="left">
+    <div id="topBox">
+        <div id="stuInfo" onclick="funcStuInfo()"><span>学生信息</span></div>
+        <div id="wait01" class="txt" onclick="funcWait01()">学生基本信息查询</div>
+    </div>
+    <div id="footBox">
+        <div id="stuClass"  onclick="funcStuClass()"><span>学生选课信息</span></div>
+        <div id="wait04"  class="txt" onclick="funcWait04()">选择课程</div>
+        <div id="wait05" class="txt" onclick="funcWait05()">成绩查询</div>
+    </div>
+
+</div>
+<div id="right">
+    <!--学生基本信息页面-->
+    <div id="stuInfoIndex" >
+    <div>
+            <table  border="1px solid black" width="1000" height="auto">
+                <thead>
+                <tr>
+                    <th>学号</th>
+                    <th>学生姓名</th>
+                    <th>学生年龄</th>
+                    <th>学生性别</th>
+                    <th>所属院系</th>
+                    <th>所属班级</th>
+                    <th>密码</th>
+                </tr>
+                </thead>
+                <tbody id="tab">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--学生选课-->
+    <div id="studentCourse">
+        请选择课程：
+        <div>
+            <table  border="1px solid black" width="700" height="auto">
+                <thead>
+                <tr>
+                    <th>课程编号</th>
+                    <th>课程名字</th>
+                    <th>任课老师编号</th>
+                    <th>学分</th>
+                    <th>请选择</th>
+                </tr>
+                </thead>
+                <tbody id="tab2">
+               <!-- <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="checkbox" onclick="checkFunc(this)"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="checkbox" onclick="checkFunc(this)"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="checkbox" onclick="checkFunc(this)"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="checkbox" onclick="checkFunc(this)"></td>
+                </tr>-->
+                </tbody>
+            </table>
+        </div>
+        <!--课程信息输入框-->
+        <button id="choossClassOkBtn" onclick="chooseClassOk()">提交</button>
+        <button onclick="classInformationFind()">查询</button>
+        <br>
+        <div>
+            你已选择的课程有：
+            <table  border="1px solid black" width="500" height="auto">
+                <thead>
+                <tr>
+                    <th>课程编号</th>
+                </tr>
+                </thead>
+                <tbody id="tab3">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!--成绩查询-->
+    <div id="gradefind">
+
+        <div>
+            <table  border="1px solid black" width="500" height="auto">
+                <thead>
+                <tr>
+                    <th>课程编号</th>
+                    <th>成绩</th>
+                </tr>
+                </thead>
+                <tbody id="tab4">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var userStudent;
+    var x=document.cookie;
+    var t=x.split('=')[1];
+    if(x&&t){
+        var jsonData=JSON.parse(t);
+        document.getElementById('username').innerHTML=jsonData.tno
+        userStudent=jsonData.tno;
+    }
+
+    var sno=userStudent;
+
+    var buttonStatu=20;
+    var stuInfoIndex=document.getElementById('stuInfoIndex');
+    var wait01=document.getElementById('wait01');
+    var wait04=document.getElementById('wait04');
+    var wait05=document.getElementById('wait05');
+    var tab=document.getElementById('tab');
+    var tab2=document.getElementById('tab2');
+    var tab3=document.getElementById('tab3');
+    var studentCourse=document.getElementById('studentCourse');
+    var gradefind=document.getElementById('gradefind');
+
+
+//**********************************************************************
+    //选课成绩查询
+    function classGradeFind() {
+        buttonStatu=25;
+        tab4.innerHTML='';
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {
+            xmlhttp=new XMLHttpRequest();
+            xmlhttp.withCredentials=true;
+        }
+        else
+        {
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                var flag=JSON.parse(xmlhttp.responseText);
+
+                console.log(flag);
+                //返回了查到的课程数据
+                if(flag=='nofind'){
+                    alert('你还没选课！')
+                }else {
+                    //console.log(flag);
+                    for(var i=0;i<flag.length;i++){
+                        var tr=document.createElement('tr');
+                        var td1=document.createElement('td');
+                        td1.innerHTML=flag[i].cno;
+                        tr.appendChild(td1);
+                        var td2=document.createElement('td');
+                        td2.innerHTML=flag[i].grade;
+                        tr.appendChild(td2);
+                        tab4.appendChild(tr);
+
+                    }
+                }
+
+            }
+        };
+        xmlhttp.open("POST",'http://127.0.0.1:3010',true);
+        xmlhttp.send('sno='+sno+'&&buttonStatu='+buttonStatu);
+    }
+
+
+
+    //选课信息查询按钮
+    function classInformationFind() {
+        buttonStatu=24;
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {
+            xmlhttp=new XMLHttpRequest();
+            xmlhttp.withCredentials=true;
+        }
+        else
+        {
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                var flag=JSON.parse(xmlhttp.responseText);
+
+                //返回了查到的课程数据
+                if(flag=='nofind'){
+                    alert('你还没选课！')
+                }else {
+                    //console.log(flag);
+                    for(var i=0;i<flag.length;i++){
+                        var tr=document.createElement('tr');
+                        var td1=document.createElement('td');
+                        td1.innerHTML=flag[i].cno;
+                        tr.appendChild(td1);
+                        tab3.appendChild(tr);
+
+                    }
+                }
+
+            }
+        };
+        xmlhttp.open("POST",'http://127.0.0.1:3010',true);
+        xmlhttp.send('sno='+sno+'&&buttonStatu='+buttonStatu);
+    }
+    
+
+//选中获取
+    var classarr=[];
+    function checkBoxTofind() {
+        var classCheck=document.getElementsByClassName('classCheck');
+        for(var i=0;i<classCheck.length;i++){
+            if(classCheck[i].checked){
+                //console.log(classCheck[i].parentNode.parentNode.children[0].innerHTML);
+
+                classarr.push(classCheck[i].parentNode.parentNode.children[0].innerHTML);
+
+            }
+        }
+    }
+    
+    var choossClassOkBtn=document.getElementById('choossClassOkBtn');
+    //选择课程的提交按钮
+    function chooseClassOk() {
+        checkBoxTofind();
+        //console.log(arr);
+       // choossClassOkBtn.setAttribute('disabled','disabled');
+        //发送数据到后台
+        buttonStatu=23;
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {
+            xmlhttp=new XMLHttpRequest();
+            xmlhttp.withCredentials=true;
+        }
+        else
+        {
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                var flag=xmlhttp.responseText;
+                if(flag=='isnull'){
+                    alert('选择不能为空！')
+                }
+                if(flag=='infoSuccess'){
+                    alert('选课成功！')
+                }
+                if(flag=='ishave'){
+                    alert('你已经选过课，不能再选！')
+                }
+
+            }
+        };
+
+        xmlhttp.open("POST",'http://127.0.0.1:3010',true);
+
+
+        xmlhttp.send('sno='+sno+'&&classarr='+classarr+'&&buttonStatu='+buttonStatu);
+
+
+
+
+
+    }
+
+   //获取课程信息
+    function classInfor() {
+        buttonStatu=22;
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {
+            xmlhttp=new XMLHttpRequest();
+            xmlhttp.withCredentials=true;
+        }
+        else
+        {
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                var flag=JSON.parse(xmlhttp.responseText);
+                for(var i=0;i<flag.length;i++){
+                    var tr=document.createElement('tr');
+                    var td1=document.createElement('td');
+                    td1.innerHTML=flag[i].cno;
+                    tr.appendChild(td1);
+                    var td2=document.createElement('td');
+                    td2.innerHTML=flag[i].cname;
+                    tr.appendChild(td2);
+                    var td3=document.createElement('td');
+                    td3.innerHTML=flag[i].tno;
+                    tr.appendChild(td3);
+                    var td4=document.createElement('td');
+                    td4.innerHTML=flag[i].credit;
+                    tr.appendChild(td4);
+                    var td5=document.createElement('td');
+                    td5.innerHTML='<input type="checkbox" class="classCheck">';
+                    tr.appendChild(td5);
+                    tab2.appendChild(tr);
+                }
+            }
+        };
+        xmlhttp.open("POST",'http://127.0.0.1:3010',true);
+        xmlhttp.send('buttonStatu='+buttonStatu);
+
+    }
+    classInfor();
+    //获取学生信息
+    function acquireInfo() {
+        buttonStatu=21;
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {
+            xmlhttp=new XMLHttpRequest();
+            xmlhttp.withCredentials=true;
+        }
+        else
+        {
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                var flag=JSON.parse(xmlhttp.responseText);
+
+                tab.children[0].children[0].innerHTML=flag.sno;
+                tab.children[0].children[1].innerHTML=flag.sname;
+                tab.children[0].children[2].innerHTML=flag.sage;
+                tab.children[0].children[3].innerHTML=flag.ssex;
+                tab.children[0].children[4].innerHTML=flag.dept;
+                tab.children[0].children[5].innerHTML=flag.sclass;
+                tab.children[0].children[6].innerHTML=flag.spwd;
+
+            }
+
+
+            }
+
+        xmlhttp.open("POST",'http://127.0.0.1:3010',true);
+        xmlhttp.send('sno='+sno+'&&buttonStatu='+buttonStatu);
+
+    }
+    acquireInfo();
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    var flag01=0;
+    var flag02=0;
+
+    function  funcStuInfo() {
+        flag01++;
+        if(flag01%2!=0){
+            wait01.style.display='block';
+        }
+        if(flag01%2==0){
+            wait01.style.display='none';
+        }
+        stuInfoIndex.style.display='none';
+        studentCourse.style.display='none';
+        gradefind.style.display='none';
+
+
+    }
+    function funcStuClass() {
+        flag02++;
+        if(flag02%2!=0){
+            wait04.style.display='block';
+            wait05.style.display='block';
+        }
+        if(flag02%2==0){
+            wait04.style.display='none';
+            wait05.style.display='none';
+        }
+        stuInfoIndex.style.display='none';
+        studentCourse.style.display='none';
+        gradefind.style.display='none';
+    }
+    function funcWait01() {
+        stuInfoIndex.style.display='block';
+        studentCourse.style.display='none';
+        gradefind.style.display='none';
+
+    }
+
+    function funcWait04() {
+        stuInfoIndex.style.display='none';
+        studentCourse.style.display='block';
+        gradefind.style.display='none';
+
+    }
+    function funcWait05() {
+        stuInfoIndex.style.display='none';
+        studentCourse.style.display='none';
+        gradefind.style.display='block';
+        classGradeFind();
+
+    }
+
+</script>
+</html>
